@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: VBx
+Version: 1.2
+Home-page: https://github.com/fnlandini/VBx_dev
+License: Apache License, Version 2.0
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: numexpr
+Requires-Dist: fastcluster
+Requires-Dist: h5py
+Requires-Dist: onnxruntime
+Requires-Dist: soundfile
+Requires-Dist: kaldi_io
+Requires-Dist: torch
+Requires-Dist: tabulate
+Requires-Dist: intervaltree

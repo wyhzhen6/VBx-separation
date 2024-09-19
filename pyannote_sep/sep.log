@@ -1,0 +1,23 @@
+# ./run_sep.sh 
+# Invoked at Wed Sep 18 19:07:52 +08 2024 from node08
+#
+# Started at Wed Sep 18 19:07:55 +08 2024 on node08
+Lightning automatically upgraded your loaded checkpoint from v1.8.6 to v2.4.0. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint ../../../../.cache/torch/pyannote/models--pyannote--separation-ami-1.0/snapshots/4d38e95cfd067c894b8b60b00761831fb01e4a8c/pytorch_model.bin`
+Some weights of the model checkpoint at microsoft/wavlm-large were not used when initializing WavLMModel: ['encoder.pos_conv_embed.conv.weight_g', 'encoder.pos_conv_embed.conv.weight_v']
+- This IS expected if you are initializing WavLMModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing WavLMModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of WavLMModel were not initialized from the model checkpoint at microsoft/wavlm-large and are newly initialized: ['encoder.pos_conv_embed.conv.parametrizations.weight.original0', 'encoder.pos_conv_embed.conv.parametrizations.weight.original1']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Number of speakers detected: 3
+Processed /home3/yihao/Research/Code/VBx/sample/audio/1.wav, results saved to /home3/yihao/Research/Code/VBx/sample/sep/1.rttm and speaker files in /home3/yihao/Research/Code/VBx/sample/sep
+Number of speakers detected: 1
+Processed /home3/yihao/Research/Code/VBx/sample/audio/3.wav, results saved to /home3/yihao/Research/Code/VBx/sample/sep/3.rttm and speaker files in /home3/yihao/Research/Code/VBx/sample/sep
+Number of speakers detected: 2
+Processed /home3/yihao/Research/Code/VBx/sample/audio/2.wav, results saved to /home3/yihao/Research/Code/VBx/sample/sep/2.rttm and speaker files in /home3/yihao/Research/Code/VBx/sample/sep
+Number of speakers detected: 3
+Processed /home3/yihao/Research/Code/VBx/sample/audio/DH_EVAL_0014.wav, results saved to /home3/yihao/Research/Code/VBx/sample/sep/DH_EVAL_0014.rttm and speaker files in /home3/yihao/Research/Code/VBx/sample/sep
+Number of speakers detected: 2
+Processed /home3/yihao/Research/Code/VBx/sample/audio/5.wav, results saved to /home3/yihao/Research/Code/VBx/sample/sep/5.rttm and speaker files in /home3/yihao/Research/Code/VBx/sample/sep
+Number of speakers detected: 1
+Processed /home3/yihao/Research/Code/VBx/sample/audio/4.wav, results saved to /home3/yihao/Research/Code/VBx/sample/sep/4.rttm and speaker files in /home3/yihao/Research/Code/VBx/sample/sep
+# Ended (code 0) at Wed Sep 18 20:45:10 +08 2024, elapsed time 5838 seconds

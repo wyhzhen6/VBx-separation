@@ -102,6 +102,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 
 ## Contact
 If you have any comment or question, please contact landini@fit.vutbr.cz or mireia@fit.vutbr.cz
-# VBx-sep
-# Separation-VBx
-# VBx-separation

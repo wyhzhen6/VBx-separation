@@ -1,0 +1,15 @@
+no change     /home3/yihao/anaconda3/condabin/conda
+no change     /home3/yihao/anaconda3/bin/conda
+no change     /home3/yihao/anaconda3/bin/conda-env
+no change     /home3/yihao/anaconda3/bin/activate
+no change     /home3/yihao/anaconda3/bin/deactivate
+no change     /home3/yihao/anaconda3/etc/profile.d/conda.sh
+no change     /home3/yihao/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home3/yihao/anaconda3/shell/condabin/Conda.psm1
+no change     /home3/yihao/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home3/yihao/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home3/yihao/anaconda3/etc/profile.d/conda.csh
+no change     /home3/yihao/.bashrc
+No action taken.
+srun: error: node08: task 0: Exited with exit code 2
+slurm.pl: job failed, log is in log/track_dihard3.log
