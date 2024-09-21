@@ -4,16 +4,16 @@ CDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 mkdir -p exp
 
-for audio in $(ls ../../Dataset/third_dihard_challenge_eval/data/flac)
+for audio in $(ls /home3/yihao/Research/Code/VBx/sample/onebyone )
 do
       filename=$(echo "${audio}" | cut -f 1 -d '.')
       echo ${filename} > exp/list.txt
 
       # run feature and x-vectors extraction
       python VBx/predict.py \
-          --in-file-list exp/list.txt \
-          --in-lab-dir ../../Dataset/third_dihard_challenge_eval/data/sad \
-          --in-wav-dir ../../Dataset/third_dihard_challenge_eval/data/flac \
+          --in-file-list  exp/list.txt \
+          --in-lab-dir /home3/yihao/Research/Code/VBx/sample/onevad \
+          --in-wav-dir /home3/yihao/Research/Code/VBx/sample/onebyone \
           --out-ark-fn exp/${filename}.ark \
           --out-seg-fn exp/${filename}.seg \
           --weights VBx/models/ResNet101_16kHz/nnet/final.onnx \
@@ -34,10 +34,4 @@ do
           --loopP 0.99
 
       # check if there is ground truth .rttm file
-      if [ -f ../../Dataset/third_dihard_challenge_eval/data/rttm/${filename}.rttm ]
-      then
-          # run dscore
-          python dscore/score.py -r ../../Dataset/third_dihard_challenge_eval/data/rttm/${filename}.rttm -s exp/${filename}.rttm 
-
-      fi
 done

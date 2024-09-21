@@ -6,5 +6,8 @@ conda init
 source ~/.bashrc
 conda activate VBx
 
-$cmd log/sep.log \
-./run_sep.sh
+# $cmd log/test1.log \
+# ./run_example.sh
+
+$cmd log/score.log \
+./score.sh

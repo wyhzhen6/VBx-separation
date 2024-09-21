@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INSTRUCTION="xvectors"
+INSTRUCTION="diarization"
 METHOD="AHC+VB" # AHC or AHC+VB
 
 exp_dir="/home3/yihao/Research/Code/VBx/exp-dihard3" # output experiment directory
@@ -53,7 +53,9 @@ if [[ $INSTRUCTION = "diarization" ]]; then
 	#变分贝叶斯的其他参数
 	OUT_DIR=$exp_dir/out_dir_"$METHOD"
 	#每次执行完删掉exp-dihard3/out_dir_AHC+VB
-	$DIR/dscore/score.py -u $UEMFULL_DIR -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_uem_full
+	#下面的内容已经执行完了，直接评分
+	#$DIR/dscore/score.py -u $UEMCORE_DIR -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_uem_core
+	#$DIR/dscore/score.py -u $UEMFULL_DIR -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_uem_full
 	if [[ ! -d $OUT_DIR ]]; then
 		mkdir -p $OUT_DIR
 		while IFS= read -r line; do
@@ -66,9 +68,10 @@ if [[ $INSTRUCTION = "diarization" ]]; then
 		# Score
 		cat $OUT_DIR/rttms/*.rttm > $OUT_DIR/sys.rttm
 		cat $RTTM_DIR/*.rttm > $OUT_DIR/ref.rttm
-		$DIR/dscore/score.py --collar 0.25 -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_fair
-		$DIR/dscore/score.py --collar 0.0 -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_full
+		#$DIR/dscore/score.py --collar 0.25 -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_fair
+		#$DIR/dscore/score.py --collar 0.0 -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_full
 		$DIR/dscore/score.py -u $UEMCORE_DIR -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_uem_core
 		$DIR/dscore/score.py -u $UEMFULL_DIR -r $OUT_DIR/ref.rttm -s $OUT_DIR/sys.rttm > $OUT_DIR/result_uem_full
 	fi
+
 fi
