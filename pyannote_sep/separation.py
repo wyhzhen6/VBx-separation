@@ -124,7 +124,7 @@ if __name__ == "__main__":
     input_folder = "/home3/yihao/Research/Code/VBx/sample/audio"
     output_folder = "/home3/yihao/Research/Code/VBx/sample/sep"
     
-    huggingface_token = "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"
+    huggingface_token = "**"
 
     perform_separation(input_folder, output_folder, huggingface_token)
     
